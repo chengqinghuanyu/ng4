@@ -1,0 +1,17 @@
+<div [ngStyle]="myStyle" [ngClass]="['good' ,'centered-text',  'orange']" class="underlined">
+    <div style="border: 1px solid red; padding: 1rem;">
+        <h4 [ngClass]="{card: true, dark: false, flat: flat }" (click)="flat=!flat">子组件投影到父组件，父组件使用select引入子组件，子组件使用ng-content指令，select赋值来定义</h4>
+        <div style="border: 1px solid orange; padding: 1rem">
+            <ng-content select="header"></ng-content>
+        </div>
+        <div style="border: 1px solid green; padding: 1rem">
+            <ng-content select="section"></ng-content>
+        </div>
+        <div style="border: 1px solid pink; padding: 1rem">
+            <ng-content select=".class-select"></ng-content>
+        </div>
+        <div style="border: 1px solid purple; padding: 1rem">
+            <ng-content select="footer"></ng-content>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div>登录信息</div>
+<form #res="ngForm" (ngSubmit)="onSubmit(res.value)">
+    <ul>
+        <li>
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" [(ngModel)]="res.name" />
+        </li>
+        <li>
+            <label for="pass">密码：</label>
+            <input type="password" id="pass" name="pass" [(ngModel)]="res.pass" />
+        </li>
+
+        <li>
+            <button type="submit" [disabled]="!res.valid">确认</button>
+            <a [routerLink]="['/modifypassword']">忘记密码</a>
+        </li>
+    </ul>
+</form>
